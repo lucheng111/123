@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+	<!-- 配置Servlet名称 -->
+	<servlet>
+		<!-- 配置Servlet名称，名称必须唯一 -->
+		<servlet-name>someServlet</servlet-name>
+		<!-- 配置Servlet的完全路径(包名+类名) -->
+		<servlet-class>com.bjpowernode.servlets.SomeServlet</servlet-class>
+	</servlet>
+	<!-- 配置Servlet映射(访问路径) -->
+	<servlet-mapping>
+		<servlet-name>someServlet</servlet-name>
+		<!-- 配置虚拟路径 -->
+		<url-pattern>/xxx/*</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>secondServlet</servlet-name>
+		<servlet-class>com.bjpowernode.servlets.SecondServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>secondServlet</servlet-name>
+		<!-- 所有的静态和动态请求都拦截 全路径模式 -->
+		<!-- <url-pattern>/*</url-pattern> -->
+		<!-- 只有静态资源被拦截 -->
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+</web-app>
